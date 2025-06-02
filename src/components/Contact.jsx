@@ -31,7 +31,7 @@ const Contact = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/abdul-ahad-9b838b360/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-indigo-600 transition"

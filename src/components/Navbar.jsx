@@ -38,7 +38,7 @@ const Navbar = () => {
             </a>
             <div className="flex space-x-4 ml-4">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/Mohd-Abdul-Ahad"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-indigo-600 transition"
@@ -46,7 +46,7 @@ const Navbar = () => {
                 <FaGithub size={20} />
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/abdul-ahad-9b838b360/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-indigo-600 transition"

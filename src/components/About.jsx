@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const About = () => {
   return (
@@ -9,13 +9,15 @@ const About = () => {
           <div className="md:w-1/2">
             <div className="bg-gray-100 rounded-lg p-8">
               <p className="text-lg text-gray-700 mb-6">
-                I'm a passionate web developer with expertise in building modern, responsive web applications. 
-                With a strong foundation in JavaScript and its ecosystem, I create efficient, scalable, 
-                and user-friendly solutions.
+                I'm a passionate web developer with expertise in building
+                modern, responsive web applications. With a strong foundation in
+                JavaScript and its ecosystem, I create efficient, scalable, and
+                user-friendly solutions.
               </p>
               <p className="text-lg text-gray-700">
-                My approach combines technical excellence with attention to design details, ensuring 
-                that applications not only work well but also provide an excellent user experience.
+                My approach combines technical excellence with attention to
+                design details, ensuring that applications not only work well
+                but also provide an excellent user experience.
               </p>
             </div>
           </div>
@@ -25,10 +27,11 @@ const About = () => {
               <div className="bg-gray-50 p-4 rounded-lg shadow-sm">
                 <h4 className="font-medium text-indigo-600 mb-2">Frontend</h4>
                 <ul className="space-y-1">
+                  <li>Html</li>
+                  <li>Css</li>
+                  <li>JavaScript</li>
                   <li>React.js</li>
-                  <li>Next.js</li>
                   <li>Tailwind CSS</li>
-                  <li>JavaScript (ES6+)</li>
                 </ul>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg shadow-sm">

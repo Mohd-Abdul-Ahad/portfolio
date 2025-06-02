@@ -3,11 +3,44 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
+    title: "Construction Company Website",
+    description: "A Construction Company Website to showcase work.",
+    tech: ["React", "Html", "Css", "Tailwind CSS"],
+    github: "https://github.com/Mohd-Abdul-Ahad/constructionwebsite",
+    live: "https://constructionwebsite-lyart.vercel.app/",
+    image: "/download.png",
+  },
+  {
+    title: "Course Selling Website",
+    description: "A Course Selling Website",
+    tech: ["React", "Html", "Css", "Tailwind CSS, Js"],
+    github: "https://github.com/Mohd-Abdul-Ahad/restaurant",
+    live: "https://coursewebsite-dtqm.vercel.app/",
+    image: "/ss3.png",
+  },
+  {
+    title: "Restaurant Website",
+    description: "A Restaurant Website",
+    tech: [
+      "React",
+      "Html",
+      "Css",
+      "Tailwind CSS",
+      "Js",
+      "NodeJs",
+      "MongoDb",
+      "ExpressJs",
+    ],
+    github: "https://github.com/Mohd-Abdul-Ahad/restaurant",
+    live: "https://restaurant-sooty-theta.vercel.app/",
+    image: "/ss4.png",
+  },
+  {
     title: "A watch company Landing Page",
     description: "A Watch company landing page to showcase work.",
     tech: ["React", "Html", "Css", "Tailwind CSS"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/Mohd-Abdul-Ahad/KYROS",
+    live: "https://kyros-iota.vercel.app/",
     image: "/Home.png",
   },
   {
@@ -15,7 +48,7 @@ const projects = [
     description:
       "A salon website to showcase offers increase walkins in store.",
     tech: ["React", "Html", "Css", "Tailwind CSS"],
-    github: "https://github.com/Mohd-Abdul-Ahad/Salon.git",
+
     live: "https://salon-theta-virid.vercel.app/",
     image: "/ss1.png",
   },
