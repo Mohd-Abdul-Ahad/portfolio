@@ -11,13 +11,12 @@ function App() {
   return (
     <>
       <HeroSection />
-      <ServicesSection/>
-      <ProjectsSection/>
-      <SkillsShowcase/>
-      <ContactSection/>
+      <ServicesSection />
+      <ProjectsSection />
+      <SkillsShowcase />
+      <ContactSection />
     </>
   );
 }
 
 export default App;
-  
