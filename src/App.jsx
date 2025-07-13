@@ -4,7 +4,7 @@ import "./App.css";
 import HeroSection from "./HeroSection";
 import ServicesSection from "./ServiceSection";
 import ProjectsSection from "./ProjectsSection";
-import SkillsShowcase from "./SkillsShowCase";
+import SkillsShowcase from "./SkillsShowcase";
 import ContactSection from "./ContactSection";
 
 function App() {
