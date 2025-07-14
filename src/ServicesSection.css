@@ -1,3 +1,4 @@
+/* ServicesSection.css */
 .services-section {
   background-color: #151515;
   color: #fff;
@@ -11,7 +12,12 @@
   margin-bottom: 4rem;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.services-section.in-view .section-header {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-title {
@@ -46,7 +52,12 @@
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.services-section.in-view .service-card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .service-icon {
@@ -105,13 +116,6 @@
 
 .service-card:hover .service-hover-effect {
   opacity: 1;
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* Desktop - Keep current layout */

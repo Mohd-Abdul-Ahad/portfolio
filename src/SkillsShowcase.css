@@ -1,53 +1,82 @@
+/* SkillsShowcase.css */
 .skills-showcase {
   background-color: #151515;
   color: #fff;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem;
   position: relative;
-  overflow: hidden;
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 1s ease-out forwards;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.skills-showcase.in-view .section-header {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: #fff;
+  letter-spacing: -0.5px;
 }
 
 .section-subtitle {
   font-size: clamp(1rem, 2vw, 1.25rem);
-  color: #888;
+  color: #aaa;
   max-width: 600px;
+  margin: 0 auto 1.5rem;
+  line-height: 1.6;
+}
+
+.section-divider {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #3a7bd5, #00d2ff);
   margin: 0 auto;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition-delay: 0.3s;
+}
+
+.skills-showcase.in-view .section-divider {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 .showcase-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
 .showcase-card {
-  background: rgba(30, 30, 30, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(30, 30, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeInUp 0.8s ease-out forwards;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   text-decoration: none;
   color: inherit;
-  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.skills-showcase.in-view .showcase-card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card-image-container {
@@ -61,7 +90,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  filter: brightness(0.9);
 }
 
 .card-hover-overlay {
@@ -100,6 +130,7 @@
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: #fff;
+  transition: color 0.3s ease;
 }
 
 .card-description {
@@ -107,6 +138,7 @@
   line-height: 1.6;
   font-size: 0.95rem;
   margin-bottom: 1rem;
+  transition: color 0.3s ease;
 }
 
 .card-tags {
@@ -123,44 +155,40 @@
   font-size: 0.75rem;
 }
 
+/* Hover Effects */
 .showcase-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
 .showcase-card:hover .card-image {
-  transform: scale(1.05);
+  transform: scale(1.1);
+  filter: brightness(0.7);
 }
 
 .showcase-card:hover .card-hover-overlay {
   opacity: 1;
 }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.showcase-card:hover .card-title {
+  color: #3a7bd5;
 }
 
-/* Desktop - Keep current layout */
-@media (min-width: 1024px) {
+.showcase-card:hover .card-description {
+  color: #ddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   .showcase-grid {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablet - 3 columns */
-@media (max-width: 1023px) and (min-width: 769px) {
-  .showcase-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Mobile - 2 columns as requested */
 @media (max-width: 768px) {
   .skills-showcase {
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem;
   }
   
   .showcase-grid {
@@ -173,20 +201,18 @@
   }
 }
 
-/* Small mobile - 1 column */
 @media (max-width: 480px) {
   .showcase-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Large screens - adjust card size */
-@media (min-width: 1200px) {
+@media (min-width: 1600px) {
   .showcase-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .card-image-container {
-    height: 220px;
+    height: 240px;
   }
 }

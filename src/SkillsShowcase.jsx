@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './SkillsShowcase.css';
 
 const SkillsShowcase = () => {
@@ -54,11 +54,40 @@ const SkillsShowcase = () => {
     }
   ];
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="skills-showcase" id="skills-showcase">
+    <section className="skills-showcase" id="skills-showcase" ref={sectionRef}>
       <div className="section-header">
         <h2 className="section-title">Skills Showcase</h2>
         <p className="section-subtitle">Interactive demos highlighting my capabilities</p>
+        <div className="section-divider"></div>
       </div>
       
       <div className="showcase-grid">
