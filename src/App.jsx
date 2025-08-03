@@ -13,7 +13,6 @@ function App() {
       <HeroSection />
       <ServicesSection />
       <ProjectsSection />
-      <SkillsShowcase />
       <ContactSection />
     </>
   );
